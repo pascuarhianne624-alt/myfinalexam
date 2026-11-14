@@ -1,417 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Portfolio</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #fff0f5;
-            color: #333;
-        }
-
-        header {
-            background: #be185d;
-            color: white;
-            text-align: center;
-            padding: 30px 15px;
-        }
-
-        header h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-
-        nav {
-            background: #fbcfe8;
-            padding: 15px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        nav a {
-            color: #831843;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 8px;
-            display: inline-block;
-        }
-
-        nav a:hover {
-            color: #ec4899;
-        }
-
-        section {
-            background: white;
-            margin: 25px auto;
-            padding: 30px;
-            width: 90%;
-            max-width: 1000px;
-            border-radius: 12px;
-            box-shadow: 0 3px 10px rgba(190, 24, 93, 0.12);
-        }
-
-        section h2 {
-            color: #be185d;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #fbcfe8;
-            padding-bottom: 10px;
-        }
-
-        section p {
-            line-height: 1.8;
-            margin-bottom: 10px;
-        }
-
-        ul {
-            margin-left: 25px;
-            line-height: 2;
-        }
-
-        .home {
-            text-align: center;
-            padding: 60px 30px;
-        }
-
-        .home h2 {
-            border: none;
-            font-size: 28px;
-        }
-
-        .home p {
-            color: #555;
-        }
-
-        .code-box {
-            width: 100%;
-            height: 650px;
-            background: #2d1022;
-            color: #fce7f3;
-            border: 2px solid #ec4899;
-            border-radius: 8px;
-            padding: 15px;
-            font-family: Consolas, monospace;
-            font-size: 13px;
-            line-height: 1.6;
-            resize: vertical;
-            white-space: pre;
-            overflow: auto;
-        }
-
-        .project-title {
-            color: #831843;
-            margin: 15px 0;
-        }
-
-        footer {
-            background: #be185d;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 30px;
-        }
-
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 25px;
-            }
-
-            nav a {
-                margin: 5px;
-                font-size: 13px;
-            }
-
-            section {
-                padding: 20px;
-            }
-
-            .code-box {
-                font-size: 11px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Personal Portfolio</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+body { font-family: Arial, sans-serif; background: #fff0f5; color: #333; }
+header { background: #be185d; color: white; text-align: center; padding: 30px 15px; }
+header h1 { font-size: 32px; margin-bottom: 10px; }
+nav { background: #fbcfe8; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 10; }
+nav a { color: #831843; text-decoration: none; font-weight: bold; margin: 8px; display: inline-block; }
+nav a:hover { color: #ec4899; }
+section { background: white; margin: 25px auto; padding: 30px; width: 90%; max-width: 1000px; border-radius: 12px; box-shadow: 0 3px 10px rgba(190,24,93,0.12); }
+section h2 { color: #be185d; margin-bottom: 20px; border-bottom: 2px solid #fbcfe8; padding-bottom: 10px; }
+section p { line-height: 1.8; margin-bottom: 10px; }
+ul { margin-left: 25px; line-height: 2; }
+.home { text-align: center; padding: 50px 30px; }
+.home h2 { border: none; font-size: 28px; }
+.home p { color: #555; }
+.profile-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 5px solid #ec4899; display: block; margin: 0 auto 20px auto; box-shadow: 0 3px 10px rgba(190,24,93,0.2); }
+.project-title { color: #831843; margin: 15px 0; }
+.code-box { width: 100%; height: 650px; background: #2d1022; color: #fce7f3; border: 2px solid #ec4899; border-radius: 8px; padding: 15px; font-family: Consolas, monospace; font-size: 13px; line-height: 1.6; resize: vertical; }
+footer { background: #be185d; color: white; text-align: center; padding: 20px; margin-top: 30px; }
+@media (max-width: 600px) { header h1 { font-size: 25px; } nav a { margin: 5px; font-size: 13px; } section { padding: 20px; } .profile-img { width: 150px; height: 150px; } }
+</style>
 </head>
-
 <body>
 
-    <header>
-        <h1>My Personal Portfolio</h1>
-        <p>BS Information Technology Student</p>
-    </header>
+<header>
+<h1>My Personal Portfolio</h1>
+<p>BS Information Technology Student</p>
+</header>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#personal">Personal Information</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#java">Java Project</a>
-    </nav>
+<nav>
+<a href="#home">Home</a>
+<a href="#personal">Personal Information</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+<a href="#java">Java Project</a>
+</nav>
 
-    <!-- HOME SECTION -->
-    <section id="home" class="home">
-        <img src="Photo.jpeg" alt="My Profile Picture" class="profile-img">
-        <h2>Welcome to My Portfolio!</h2>
-        <p>
-            Hello! I am Rhianne C. Pascua, a BS Information
-            Technology student.
-        </p>
-    </section>
+<section id="home" class="home">
+<img src="Photo.jpeg" alt="My Photo" class="profile-img">
+<h2>Welcome to My Portfolio!</h2>
+<p>Hello! I am Rhianne C. Pascua, a BS Information Technology student.</p>
+</section>
 
-    <!-- PERSONAL INFORMATION -->
-    <section id="personal">
-        <h2>Personal Information</h2>
+<section id="personal">
+<h2>Personal Information</h2>
+<p><b>Name:</b> Rhianne C. Pascua</p>
+<p><b>Course:</b> BS Information Technology</p>
+<p><b>Address:</b> Angeles City, Pampanga</p>
+</section>
 
-        <p><strong>Name:</strong> Rhianne C. Pascua</p>
-        <p><strong>Course:</strong> Bachelor of Science in Information Technology</p>
-        <p><strong>Year Level:</strong> First Year
-        <p><strong>College:</strong> Our Lady of the Sacred Heart College of Guimba, Inc.</p>
+<section id="education">
+<h2>Education</h2>
+<ul>
+<li>Elementary</li>
+<li>Junior High School</li>
+<li>Senior High School</li>
+<li>College - BS Information Technology</li>
+</ul>
+</section>
 
-        <p>
-            I am a responsible, hardworking, and friendly person.
-            I always try my best to learn new things and improve
-            my knowledge and skills. I am interested in computers,
-            technology, and programming.
-        </p>
-    </section>
+<section id="skills">
+<h2>Skills</h2>
+<ul>
+<li>HTML / CSS</li>
+<li>Java Programming</li>
+<li>Basic Computer Skills</li>
+</ul>
+</section>
 
-    <!-- EDUCATIONAL BACKGROUND -->
-    <section id="education">
-        <h2>Educational Background</h2>
-
-        <p><strong>College:</strong></p>
-        <p>Our Lady of the Sacred Heart College of Guimba, Inc.</p>
-        <p>Bachelor of Science in Information Technology</p>
-        <p>First Year College</p>
-
-        <p><strong>Previous Education:</strong></p>
-        <p>Senior High School:
-         Bonifacio Luz Natividad Educational Foundation Inc.</p>
-         <p>Strand: STEM</p>
-        <p>Junior High School: Nagpandayan National High School</p>
-        <p>Nagpandayan Elementary School</p>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills">
-        <h2>My Skills</h2>
-
-        <ul>
-            <li>Basic HTML and CSS</li>
-            <li>Basic Java Programming</li>
-            <li>Computer Literacy</li>
-            <li>Problem Solving</li>
-            <li>Basic Web Designing</li>
-            <li>Teamwork and Communication</li>
-            <li>Willingness to Learn New Technologies</li>
-        </ul>
-    </section>
-
-    <!-- JAVA PROJECT -->
-    <section id="java">
-        <h2>Java Project</h2>
-
-        <h3 class="project-title">
-            Final Performance Task 
-        </h3>
-
-        <p><strong>Project Title:</strong> Number Sliding Puzzle Game</p>
-
-        <p><strong>Objective:</strong></p>
-
-        <p>
-            The objective of this game is to arrange the numbers
-            from 1 to 8 in the correct order by moving the empty
-            space. The player must use logical thinking and
-            problem-solving skills to complete the puzzle.
-        </p>
-
-        <p><strong>Source Code:</strong></p>
-
-        <textarea class="code-box" readonly spellcheck="false">
-import java.util.Scanner;
-import java.util.Random;
-
-public class PuzzleGame {
-
-    static int[] tiles = {
-        1, 2, 3,
-        4, 5, 6,
-        7, 8, 0
-    };
-
-    static Scanner input = new Scanner(System.in);
-    static Random random = new Random();
-
-    public static void displayBoard() {
-
-        System.out.println("\n--- NUMBER PUZZLE GAME ---");
-
-        for (int i = 0; i < 9; i++) {
-
-            if (tiles[i] == 0) {
-                System.out.print("   ");
-            } else {
-                System.out.print(" " + tiles[i] + " ");
-            }
-
-            if (i % 3 == 2) {
-                System.out.println();
-            }
-        }
-    }
-
-    public static void shuffle() {
-
-        for (int i = 0; i < 100; i++) {
-
-            int empty = findEmpty();
-            int move = random.nextInt(4);
-
-            if (move == 0 && empty >= 3) {
-                swap(empty, empty - 3);
-            }
-            else if (move == 1 && empty < 6) {
-                swap(empty, empty + 3);
-            }
-            else if (move == 2 && empty % 3 != 0) {
-                swap(empty, empty - 1);
-            }
-            else if (move == 3 && empty % 3 != 2) {
-                swap(empty, empty + 1);
-            }
-        }
-    }
-
-    public static int findEmpty() {
-
-        for (int i = 0; i < 9; i++) {
-            if (tiles[i] == 0) {
-                return i;
-            }
-        }
-
-        return -1;
-    }
-
-    public static void swap(int a, int b) {
-
-        int temp = tiles[a];
-        tiles[a] = tiles[b];
-        tiles[b] = temp;
-    }
-
-    public static void move(String direction) {
-
-        int empty = findEmpty();
-
-        if (direction.equalsIgnoreCase("W")
-                && empty >= 3) {
-
-            swap(empty, empty - 3);
-
-        }
-        else if (direction.equalsIgnoreCase("S")
-                && empty < 6) {
-
-            swap(empty, empty + 3);
-
-        }
-        else if (direction.equalsIgnoreCase("A")
-                && empty % 3 != 0) {
-
-            swap(empty, empty - 1);
-
-        }
-        else if (direction.equalsIgnoreCase("D")
-                && empty % 3 != 2) {
-
-            swap(empty, empty + 1);
-
-        }
-        else {
-            System.out.println("Invalid move! Try again.");
-        }
-    }
-
-    public static boolean isSolved() {
-
-        for (int i = 0; i < 8; i++) {
-
-            if (tiles[i] != i + 1) {
-                return false;
-            }
-        }
-
-        return tiles[8] == 0;
-    }
-
-    public static void main(String[] args) {
-
-        System.out.println("==========================");
-        System.out.println("    NUMBER PUZZLE GAME    ");
-        System.out.println("==========================");
-
-        System.out.println("Arrange the numbers from 1 to 8.");
-        System.out.println("W = Up");
-        System.out.println("S = Down");
-        System.out.println("A = Left");
-        System.out.println("D = Right");
-        System.out.println("Q = Quit");
-
-        shuffle();
-
-        while (true) {
-
-            displayBoard();
-
-            if (isSolved()) {
-                System.out.println("\nCongratulations!");
-                System.out.println("You solved the puzzle!");
-                break;
-            }
-
-            System.out.print("\nEnter your move: ");
-            String choice = input.nextLine();
-
-            if (choice.equalsIgnoreCase("Q")) {
-                System.out.println("Thank you for playing!");
-                break;
-            }
-
-            if (choice.equalsIgnoreCase("W")
-                    || choice.equalsIgnoreCase("A")
-                    || choice.equalsIgnoreCase("S")
-                    || choice.equalsIgnoreCase("D")) {
-
-                move(choice);
-
-            } else {
-                System.out.println("Invalid input!");
-            }
-        }
-
-        input.close();
-    }
+<section id="java">
+<h2>Java Project</h2>
+<h3 class="project-title">My Java Code</h3>
+<textarea class="code-box" readonly>
+public class Hello {
+  public static void main(String[] args) {
+    System.out.println("Hello, I am Rhianne C. Pascua");
+  }
 }
-        </textarea>
-    </section>
+</textarea>
+</section>
 
-    <footer>
-        <p>Rhianne C. Pascua | BSIT 1</p>
-        <p>Build Dreams. Code Futures.</p>
-    </footer>
+<footer>
+<p>© 2026 Rhianne C. Pascua</p>
+</footer>
 
 </body>
 </html>
-
