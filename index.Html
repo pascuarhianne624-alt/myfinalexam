@@ -79,10 +79,9 @@
             line-height: 2;
         }
 
-        /* HOME SECTION */
         .home {
             text-align: center;
-            padding: 50px 30px;
+            padding: 60px 30px;
         }
 
         .home h2 {
@@ -94,23 +93,6 @@
             color: #555;
         }
 
-        /* PROFILE IMAGE */
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #ec4899;
-            margin-bottom: 20px;
-            box-shadow: 0 3px 10px rgba(190, 24, 93, 0.2);
-        }
-
-        .project-title {
-            color: #831843;
-            margin: 15px 0;
-        }
-
-        /* SOURCE CODE BOX */
         .code-box {
             width: 100%;
             height: 650px;
@@ -125,6 +107,11 @@
             resize: vertical;
             white-space: pre;
             overflow: auto;
+        }
+
+        .project-title {
+            color: #831843;
+            margin: 15px 0;
         }
 
         footer {
@@ -152,11 +139,6 @@
             .code-box {
                 font-size: 11px;
             }
-
-            .profile-img {
-                width: 150px;
-                height: 150px;
-            }
         }
     </style>
 </head>
@@ -178,16 +160,12 @@
 
     <!-- HOME SECTION -->
     <section id="home" class="home">
-
-        <!-- MY PROFILE PICTURE -->
-        <img src="Photo.jpeg" alt="My Profile Picture" class="profile-img">
-
         <h2>Welcome to My Portfolio!</h2>
-
+        <img src="Photo.jpeg" alt="My Profile Picture" class="profile-img">
         <p>
-            Hello! I am Rhianne C. Pascua, a BS Information Technology student.
+            Hello! I am Rhianne C. Pascua, a BS Information
+            Technology student.
         </p>
-
     </section>
 
     <!-- PERSONAL INFORMATION -->
@@ -196,13 +174,13 @@
 
         <p><strong>Name:</strong> Rhianne C. Pascua</p>
         <p><strong>Course:</strong> Bachelor of Science in Information Technology</p>
-        <p><strong>Year Level:</strong> First Year</p>
+        <p><strong>Year Level:</strong> First Year
         <p><strong>College:</strong> Our Lady of the Sacred Heart College of Guimba, Inc.</p>
 
         <p>
             I am a responsible, hardworking, and friendly person.
-            I always try my best to learn new things and improve my
-            knowledge and skills. I am interested in computers,
+            I always try my best to learn new things and improve
+            my knowledge and skills. I am interested in computers,
             technology, and programming.
         </p>
     </section>
@@ -217,8 +195,9 @@
         <p>First Year College</p>
 
         <p><strong>Previous Education:</strong></p>
-        <p>Senior High School: Bonifacio Luz Natividad Educational Foundation Inc.</p>
-        <p>Strand: STEM</p>
+        <p>Senior High School:
+         Bonifacio Luz Natividad Educational Foundation Inc.</p>
+         <p>Strand: STEM</p>
         <p>Junior High School: Nagpandayan National High School</p>
         <p>Nagpandayan Elementary School</p>
     </section>
@@ -242,7 +221,9 @@
     <section id="java">
         <h2>Java Project</h2>
 
-        <h3 class="project-title">Final Performance Task</h3>
+        <h3 class="project-title">
+            Final Performance Task 
+        </h3>
 
         <p><strong>Project Title:</strong> Number Sliding Puzzle Game</p>
 
@@ -250,9 +231,9 @@
 
         <p>
             The objective of this game is to arrange the numbers
-            from 1 to 8 in the correct order by moving the empty space.
-            The player must use logical thinking and problem-solving
-            skills to complete the puzzle.
+            from 1 to 8 in the correct order by moving the empty
+            space. The player must use logical thinking and
+            problem-solving skills to complete the puzzle.
         </p>
 
         <p><strong>Source Code:</strong></p>
@@ -263,14 +244,21 @@ import java.util.Random;
 
 public class PuzzleGame {
 
-    static int[] tiles = {1, 2, 3, 4, 5, 6, 7, 8, 0};
+    static int[] tiles = {
+        1, 2, 3,
+        4, 5, 6,
+        7, 8, 0
+    };
+
     static Scanner input = new Scanner(System.in);
     static Random random = new Random();
 
     public static void displayBoard() {
+
         System.out.println("\n--- NUMBER PUZZLE GAME ---");
 
         for (int i = 0; i < 9; i++) {
+
             if (tiles[i] == 0) {
                 System.out.print("   ");
             } else {
@@ -284,66 +272,94 @@ public class PuzzleGame {
     }
 
     public static void shuffle() {
+
         for (int i = 0; i < 100; i++) {
+
             int empty = findEmpty();
             int move = random.nextInt(4);
 
             if (move == 0 && empty >= 3) {
                 swap(empty, empty - 3);
-            } else if (move == 1 && empty < 6) {
+            }
+            else if (move == 1 && empty < 6) {
                 swap(empty, empty + 3);
-            } else if (move == 2 && empty % 3 != 0) {
+            }
+            else if (move == 2 && empty % 3 != 0) {
                 swap(empty, empty - 1);
-            } else if (move == 3 && empty % 3 != 2) {
+            }
+            else if (move == 3 && empty % 3 != 2) {
                 swap(empty, empty + 1);
             }
         }
     }
 
     public static int findEmpty() {
+
         for (int i = 0; i < 9; i++) {
             if (tiles[i] == 0) {
                 return i;
             }
         }
+
         return -1;
     }
 
     public static void swap(int a, int b) {
+
         int temp = tiles[a];
         tiles[a] = tiles[b];
         tiles[b] = temp;
     }
 
     public static void move(String direction) {
+
         int empty = findEmpty();
 
-        if (direction.equalsIgnoreCase("W") && empty >= 3) {
+        if (direction.equalsIgnoreCase("W")
+                && empty >= 3) {
+
             swap(empty, empty - 3);
-        } else if (direction.equalsIgnoreCase("S") && empty < 6) {
+
+        }
+        else if (direction.equalsIgnoreCase("S")
+                && empty < 6) {
+
             swap(empty, empty + 3);
-        } else if (direction.equalsIgnoreCase("A") && empty % 3 != 0) {
+
+        }
+        else if (direction.equalsIgnoreCase("A")
+                && empty % 3 != 0) {
+
             swap(empty, empty - 1);
-        } else if (direction.equalsIgnoreCase("D") && empty % 3 != 2) {
+
+        }
+        else if (direction.equalsIgnoreCase("D")
+                && empty % 3 != 2) {
+
             swap(empty, empty + 1);
-        } else {
+
+        }
+        else {
             System.out.println("Invalid move! Try again.");
         }
     }
 
     public static boolean isSolved() {
+
         for (int i = 0; i < 8; i++) {
+
             if (tiles[i] != i + 1) {
                 return false;
             }
         }
+
         return tiles[8] == 0;
     }
 
     public static void main(String[] args) {
 
         System.out.println("==========================");
-        System.out.println(" NUMBER PUZZLE GAME ");
+        System.out.println("    NUMBER PUZZLE GAME    ");
         System.out.println("==========================");
 
         System.out.println("Arrange the numbers from 1 to 8.");
@@ -356,6 +372,7 @@ public class PuzzleGame {
         shuffle();
 
         while (true) {
+
             displayBoard();
 
             if (isSolved()) {
@@ -372,10 +389,10 @@ public class PuzzleGame {
                 break;
             }
 
-            if (choice.equalsIgnoreCase("W") ||
-                choice.equalsIgnoreCase("A") ||
-                choice.equalsIgnoreCase("S") ||
-                choice.equalsIgnoreCase("D")) {
+            if (choice.equalsIgnoreCase("W")
+                    || choice.equalsIgnoreCase("A")
+                    || choice.equalsIgnoreCase("S")
+                    || choice.equalsIgnoreCase("D")) {
 
                 move(choice);
 
@@ -397,3 +414,4 @@ public class PuzzleGame {
 
 </body>
 </html>
+
